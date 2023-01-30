@@ -3,7 +3,7 @@
 import os
 # Clearing the Screen
 os.system('cls')
-from art import logo
+from Day_13.art import logo
 print(logo)
 bidding_record = {}
 print("welocme to the secret auction program")
