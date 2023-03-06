@@ -1,8 +1,11 @@
 import requests
+from twilio.rest import Client
 import json
 
-api_key = "0e21bfb00f9826fac72c406f8a42e218"
+api_key = ""
 api_url = "https://api.openweathermap.org/data/2.5/weather"
+account_sid = ""
+auth_token = ""
 lat = 28.632429
 lon = 77.218788
 params = dict()
@@ -22,6 +25,11 @@ for hour_data in weather_slice:
 
 if will_rain:
     print("Bring an Umbrella")
+    client =Client(account_sid,auth_token)
+    message = client.messages.create(body="Please, carry a umbrella todays weather is rainy",
+                                     from_="",
+                                     to="")
+    print(message.status)
 #weather = response['weather'][0]['main']
 #icon = response['weather'][0]['icon']
 #id = response['weather'][0]['id']
