@@ -8,7 +8,7 @@ def sending_quotes():
         quotes = f.read()
     quotes = quotes.split('\n')
     msg = random.choice(quotes)
-    my_email = "demo@gmail.com"
+    my_email = ""
     password = ""
     with smtplib.SMTP("smtp.gmail.com")as connection:
         connection.starttls()
